@@ -1,0 +1,71 @@
+body.admin-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  background: #e74c3c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.admin-menu {
+  margin: 20px 0;
+}
+
+.admin-menu button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.admin-menu button:hover {
+  background: #2980b9;
+}
+
+.admin-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+form button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #27ae60;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Admin - Ambiente Soluciones</title>
+  <link rel="stylesheet" href="/static/admin.css">
+</head>
+<body class="admin-page">
+
+  <!-- Encabezado con botón logout -->
+  <header>
+    <h1>Bienvenido a la página de Administración de Ambiente Soluciones</h1>
+    <a href="/logout" class="logout-btn">Cerrar sesión</a>
+  </header>
+
+  <p>Has iniciado sesión correctamente como <strong>administrador</strong>.</p>
+
+  <!-- Menú de administración -->
+  <div class="admin-menu">
+    <button onclick="mostrarSeccion('productos')">Agregar Productos</button>
+    <button onclick="mostrarSeccion('servicios')">Agregar Servicios</button>
+    <button onclick="mostrarSeccion('clientes')">Consultar Clientes</button>
+  </div>
+
+  <!-- === Sección Productos === -->
+  <div id="productos" class="admin-section" style="display:none;">
+    <h2>Agregar Nuevo Producto</h2>
+    <form id="formProducto">
+      <label for="nombreProducto">Nombre del producto:</label>
+      <input type="text" id="nombreProducto" name="nombreProducto" required>
+
+      <label for="descripcionProducto">Descripción:</label>
+      <textarea id="descripcionProducto" name="descripcionProducto" required></textarea>
+
+      <label for="precioProducto">Precio:</label>
+      <input type="number" id="precioProducto" name="precioProducto" required>
+
+      <button type="submit">Agregar Producto</button>
+    </form>
+
+    <!-- Contenedor para mostrar la lista de productos -->
+    <div id="productList"></div>
+  </div>
+
+  <!-- === Sección Servicios === -->
+  <div id="servicios" class="admin-section" style="display:none;">
+    <h2>Agregar Nuevo Servicio</h2>
+    <form id="formServicio">
+      <label for="nombreServicio">Nombre del servicio:</label>
+      <input type="text" id="nombreServicio" name="nombre" required>
+
+      <label for="descripcionServicio">Descripción:</label>
+      <textarea id="descripcionServicio" name="descripcion" required></textarea>
+
+      <label for="precioServicio">Precio:</label>
+      <input type="number" id="precioServicio" name="precio" required>
+
+      <button type="submit">Agregar Servicio</button>
+    </form>
+
+    <!-- Contenedor para mostrar la lista de servicios -->
+    <div id="serviceList"></div>
+  </div>
+
+  <!-- === Sección Clientes (ACTUALIZADA) === -->
+  <div id="clientes" class="admin-section" style="display:none;">
+    <h2>Lista de Clientes</h2>
+    <table id="tabla-clientes" border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Mensaje</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Script para manejar el menú -->
+  <script>
+    function mostrarSeccion(seccionId) {
+      const secciones = ['productos', 'servicios', 'clientes'];
+      secciones.forEach(id => {
+        document.getElementById(id).style.display = (id === seccionId) ? 'block' : 'none';
+      });
+
+      // Si se seleccionó clientes, cargar los datos dinámicamente
+      if (seccionId === 'clientes') {
+        cargarClientes();
+      }
+    }
+
+    function cargarClientes() {
+      fetch("/clientes")
+        .then(response => {
+          if (!response.ok) throw new Error("Error al obtener los clientes");
+          return response.json();
+        })
+        .then(clientes => {
+          const tbody = document.querySelector("#tabla-clientes tbody");
+          tbody.innerHTML = ""; // Limpia la tabla
+          clientes.forEach(cliente => {
+            const fila = document.createElement("tr");
+            fila.innerHTML = `
+              <td>${cliente.id}</td>
+              <td>${cliente.nombre}</td>
+              <td>${cliente.email}</td>
+              <td>${cliente.telefono}</td>
+              <td>${cliente.contenido}</td>
+            `;
+            tbody.appendChild(fila);
+          });
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+    }
+  </script>
+
+  <!-- Tu JS de administración -->
+  <script src="/static/admin.js"></script>
+
+</body>
+</html>

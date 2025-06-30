@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ambiente Soluciones</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <!-- Incluyo Font Awesome para el uso de iconos vectoriales  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- Creo mi barra de navegacion con las pestañas-->
+  <header>
+    <nav>
+      <div class="logo">Ambiente Soluciones</div>
+      <div class="menu">
+        <a href="/">Inicio</a>
+        <a href="/nosotros">Nosotros</a>
+        <a href="/servicios">Servicios</a>
+        <a href="/productos">Productos</a>
+        <a href="/contacto">Contacto</a>
+        <a href="/login">Login</a>
+        <a href="#" class="search-icon">  <!-- # hace que no me redirija a ninguna pagina simo sea un marcador en el caso de la lupa -->
+           <!-- Creare el icono de la lupa directamente en HTML y con d le doy forma a la lupa -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10,2A8,8 0 0,1 18,10C18,12.1 17.2,14 15.9,15.4L21.7,21.2L20.3,22.6L14.5,16.8C13.1,18.2 11.1,19 9,19A8,8 0 0,1 1,11A8,8 0 0,1 9,3A8,8 0 0,1 10,2M9,5A6,6 0 0,0 3,11A6,6 0 0,0 9,17A6,6 0 0,0 15,11A6,6 0 0,0 9,5Z"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+        Energía solar para un futuro sostenible  <!-- Mensaje dentro de la imagen dinamica -->
+  </header>
+
+  <main>
+    <!-- Sección Portafolio para elaborar el carrusel dinamico -->
+    <section id="portafolio" class="section portfolio"><!-- Creare una seccion del sitio web y le asigno un identificador portafolio a esta seccion. Ademas revisa .section.portfolio en css-->
+      <div class="container"><!-- Agrupo el contenido de la seccion en un area limitada o contenedor-->
+        <div class="section-header"><!-- Aplico la alineacion centrada y espacio inferior ver css -->
+          <h3 class="title">Nuestras Soluciones</h3> <!--.title { en el css -->
+        </div>
+
+        <div class="carousel-container"> <!-- Contenedor principal del carrusel -->
+          <button class="carousel-btn prev">&#10094;</button><!-- unicode flecha a la izquierda -->
+          <div class="carousel-track"><!-- pista de elementos del carrusel para colocar tags o imagenes  .carousel-track { en css-->
+
+            <article class="box"> <!-- Ir al .box en el css-->
+              <a href="proyecto1.html"><!-- Crea un enlace click en la imagen  y me lleva a la pagina proyecto1.html -->
+                <img src="/static/imagenes/silvopastoreo.webp" alt="Proyecto 1" /><!-- Muestra la imagen del proyecto -->
+              </a>
+              <h3>Tecnificación de cultivos</h3>
+            </article>
+
+
+            <article class="box">
+              <a href="proyecto2.html">
+                <img src="/static/imagenes/panel.jpg" alt="Proyecto 2" />
+              </a>
+              <h3>Diseño de sistemas fotovoltaicos</h3>
+            </article>
+
+
+            <article class="box">
+              <a href="proyecto3.html">
+                <img src="/static/imagenes/camara.jpg" alt="Proyecto 3" />
+              </a>
+              <h3>Seguridad perimetral</h3>
+            </article>
+           
+            <article class="box">
+              <a href="proyecto4.html">
+                <img src="/static/imagenes/iluminacion.jpg" alt="Proyecto 4" />
+              </a>
+              <h3>Iluminacion solar</h3>
+            </article>
+
+            <article class="box">
+              <a href="proyecto5.html">
+                <img src="/static/imagenes/capacitacion.jpg" alt="Proyecto 5" />
+              </a>
+              <h3>Asesoria y Capacitacion</h3>
+            </article>
+
+            <article class="box">
+              <a href="proyecto6.html">
+                <img src="/static/imagenes/mantenimiento.jpg" alt="Proyecto 6" />
+              </a>
+              <h3>Mantenimiento y soporte tecnico</h3>
+            </article>
+
+            <article class="box">
+              <a href="proyecto7.html">
+                <img src="/static/imagenes/image.png" alt="Proyecto 6" />
+              </a>
+              <h3>Solucion 7</h3>
+            </article>            
+            
+          </div>
+
+          <button class="carousel-btn next">&#10095;</button><!-- unicode flecha a la izquierda -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Defino una seccion contacto con mapa de ubicacion y posiblemente un formulario alineados -->
+    <section id="contacto" class="section">
+  <div class="section-header">
+    <h3 class="title">Juntos construiremos tu Proyecto</h3>
+  </div>
+
+  <div class="form-map">
+    <!-- Bloque lateral con info de contacto -->
+    <div class="contact-info">
+  <h4>Horario</h4>
+  <p>
+    <strong>Lunes a viernes:</strong><br>
+    8:00 a.m. - 5:30 p.m.
+  </p>
+  <p>
+    <strong>Sábados:</strong><br>
+    8:30 a.m. - 1:00 p.m.
+  </p>
+  <h4>Oficina de Atencion</h4>
+  <p>
+    Calle 16 # 22-68 <br>
+    Altos de Radio Sanyo<br>
+    Pasto – Colombia.
+  </p>
+  <h4>¿Tienes preguntas? </h4>
+   <h4>¡Llámanos o Escribenos!</h4>
+  <p>
+    <i class="fas fa-phone"></i> 317001001<br>
+    <i class="fab fa-whatsapp"></i> 317001001<br>
+    <i class="fas fa-envelope"></i> ambientesoluciones@gmail.com
+  </p>
+</div>
+
+
+    <!--Mapa de Google Maps -->
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.926281305598!2d-77.28198482595103!3d1.2116050987768316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2ed484bf0973c7%3A0x748156b8774d3837!2sRadio%20SANYO!5e0!3m2!1ses!2sco!4v1738620391939!5m2!1ses!2sco"
+      width="600"
+      height="400"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+
+    <!-- Formulario -->
+    <form class="box-form">
+      <input type="text" placeholder="Nombre" class="input-form" required />
+      <input type="email" placeholder="Email" class="input-form" required />
+      <textarea placeholder="Deja tu mensaje..." class="input-form" rows="8" required></textarea>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </div>
+</section>
+
+  </main>
+
+  <!-- Defino el pie de página con íconos Font Awesome -->
+  <footer>
+    <p>&copy; 2025 Ambiente Soluciones</p>
+    <div class="social-links"> <!--.social-links a { en css-->   
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://wa.me/573001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <!-- Script para carrusel -->
+  <!-- en main.js tengo todo el codigo para el manejo del carrusel -->
+<script src="/static/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Productos | Ambiente Soluciones</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!--Barra de navegación -->
+  <header>
+    <nav>
+      <div class="logo">Ambiente Soluciones</div>
+      <div class="menu">
+        <a href="/">Inicio</a>
+        <a href="/nosotros">Nosotros</a>
+        <a href="/servicios">Servicios</a>
+        <a href="/productos">Productos</a>
+        <a href="/contacto">Contacto</a>
+        <!-- Lupa opcional -->
+        <a href="#" class="search-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10,2A8,8 0 0,1 18,10C18,12.1 17.2,14 15.9,15.4L21.7,21.2L20.3,22.6L14.5,16.8C13.1,18.2 11.1,19 9,19A8,8 0 0,1 1,11A8,8 0 0,1 9,3A8,8 0 0,1 10,2M9,5A6,6 0 0,0 3,11A6,6 0 0,0 9,17A6,6 0 0,0 15,11A6,6 0 0,0 9,5Z"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido principal de Productos -->
+  <main>
+    <section class="banner-header">
+      <div class="banner-header-text">
+        <h1 class="banner-title">Nuestros Productos</h1>
+        <p>Encuentra aquí nuestra variedad de productos para soluciones en energías renovables, seguridad y más...</p>
+      </div>
+    </section>
+
+    <section class="products">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="title">¿Qué podemos hacer por ti?</h3>
+        </div>
+        <div class="product-list" id="productList">
+          <!-- Servicios dinámicos desde base de datos -->
+          {% for producto in productos %}
+            <article class="product-item">
+              <h4>{{ producto.nombre }}</h4>
+              <p>{{ producto.descripcion }}</p>
+              <p>Precio: ${{ producto.precio }}</p>
+              {% if producto.imagen %}
+                <img src="{{ producto.imagen }}" alt="{{ producto.nombre }}" width="200">
+              {% endif %}
+            </article>
+          {% else %}
+            <p>No hay productos registrados aún.</p>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+  <p>&copy; 2025 Ambiente Soluciones</p>
+  <div class="social-links">
+    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+    <a href="https://wa.me/573001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</footer>
+  
+<script src="/static/main.js"></script>
+
+</body>
+</html>
