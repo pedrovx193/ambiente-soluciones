@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Página de contacto de Ambiente Soluciones" />
+
+  <title>Contacto | Ambiente Soluciones</title>
+
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- mi CSS -->
+  <link rel="stylesheet" href="/static/contacto.css" />
+</head>
+
+<body>
+  <!-- Barra de navegación -->
+  <header>
+    <nav>
+      <div class="logo">Ambiente Soluciones</div>
+      <div class="menu">
+        <a href="/">Inicio</a>
+        <a href="/nosotros">Nosotros</a>
+        <a href="/servicios">Servicios</a>
+        <a href="/productos">Productos</a>
+        <a href="/contacto">Contacto</a>
+        <a href="#" class="search-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10,2A8,8 0 0,1 18,10C18,12.1 17.2,14 15.9,15.4L21.7,21.2L20.3,22.6L14.5,16.8C13.1,18.2 11.1,19 9,19A8,8 0 0,1 1,11A8,8 0 0,1 9,3A8,8 0 0,1 10,2M9,5A6,6 0 0,0 3,11A6,6 0 0,0 9,17A6,6 0 0,0 15,11A6,6 0 0,0 9,5Z"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner-header">
+    <div class="banner-header-text">
+      <h1 class="banner-title">Página <span>Contacto</span></h1>
+      <p>Ofrecemos soluciones innovadoras en energías renovables y seguridad. Contáctanos para desarrollar juntos tu proyecto a la medida.</p>
+      
+    </div>
+  </section>
+
+<main>
+  <section class="section">
+    <!-- Título -->
+    <div class="section-header">
+      <h3 class="title" data-title="Escríbenos o contáctanos">Hablemos de tu idea o proyecto</h3>
+    </div>
+
+    <!--  Bloque horizontal: Info + (Mapa + Formulario) -->
+    <div class="contact-wrapper">
+      <!-- Información de contacto alineada a la izquierda -->
+      <div class="card-info">
+        <article>
+          <i class="fas fa-map-marker-alt fa-2x"></i>
+          <h4>Dirección</h4>
+          <p>Calle 16 # 22-68</p>
+          <p>Altos de Rdio Sanyo</p>
+          <p>Pasto, Colombia</p>
+        </article>
+
+        <article>
+          <i class="fas fa-mobile-alt fa-2x"></i>
+          <h4>Teléfono</h4>
+          <p>Oficina: 317001001</p>
+          <p>Personal: 317001001</p>
+        </article>
+
+        <article>
+          <i class="fas fa-envelope fa-2x"></i>
+          <h4>Email</h4>
+          <a href="mailto:ambientesoluciones@gmail.com">ambientesoluciones@gmail.com</a>
+        </article>
+      </div>
+
+      <!-- Mapa + Formulario juntos a la derecha -->
+      <div class="form-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.926281305598!2d-77.28198482595103!3d1.2116050987768316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2ed484bf0973c7%3A0x748156b8774d3837!2sRadio%20SANYO!5e0!3m2!1ses!2sco!4v1738620391939!5m2!1ses!2sco" allowfullscreen loading="lazy"></iframe>
+          <div class="form-container">
+           <h3 class="form-title">Regístrate y déjanos tu mensaje</h3>
+            <form class="box-form" action="/enviar" method="post">
+              <input name="nombre" type="text" placeholder="Nombre" class="input-form" required />
+              <input name="email" type="email" placeholder="Email" class="input-form" required />
+              <input name="telefono" type="telefono" placeholder="Telefono" class="input-form" required />
+              <textarea name="mensaje" placeholder="Solicita tu cotización o déjanos tu mensaje..." class="input-form" rows="8" required></textarea>
+              <button type="submit" class="btn">Enviar</button>
+           </form>
+       </div>
+    </div>
+  </section>
+</main>
+
+
+  <!--  Pie de página -->
+  <footer>
+    <p>&copy; 2025 Ambiente Soluciones</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://wa.me/573001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+</body>
+</html>

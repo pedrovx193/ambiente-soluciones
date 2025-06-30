@@ -1,0 +1,294 @@
+/* === Variables de color === */
+:root {
+  --main-color: #191c32;
+  --primary-color: aqua;
+  --secondary-color: #fff;
+  --hover-color: #00ff00;
+}
+
+/* === Estructura general === */
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+nav {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+nav a:hover {
+  background: var(--primary-color);
+  color: var(--main-color);
+}
+
+/* === Header con banner === */
+header {
+  position: relative;
+  background: url('/static/imagenes/energiasolar.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 400px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+  animation: moveBackgroundVertical 30s linear infinite;
+}
+
+header nav {
+  position: absolute;
+  top: 0; left: 0; width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+header nav .menu {
+  display: flex;
+  gap: 1rem;
+  margin-right: 2rem;
+}
+
+header nav a {
+  font-size: 1rem;
+}
+
+header nav a:hover {
+  background: var(--primary-color);
+  color: var(--hover-color);
+}
+
+header nav .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+@keyframes moveBackgroundVertical {
+  from { background-position: center 0; }
+  to   { background-position: center 100%; }
+}
+
+/* === Banner título === */
+.banner-header-text {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  padding-left: 2rem; 
+}
+
+.banner-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  margin-bottom: 10px; /* Controla el espacio con margen */
+  color: rgb(75, 219, 31);
+}
+
+.banner-title span {
+  color: rgb(17, 212, 17);
+}
+/* === Sección contacto: Info + Mapa + Formulario === */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.card-info {
+  display: grid;
+  gap: 20px;
+  text-align: center;
+}
+
+.card-info article i {
+  font-size: 2rem;
+}
+
+.card-info h4 {
+  margin: 0.5rem 0;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.form-map {
+  margin: 30px;
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 100px; 
+}
+
+
+.form-map iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 8px;
+}
+
+.form-title {
+  text-align: center; /* Asegura que el texto esté centrado */
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  color: #e0ebee; /* o tu color de texto */
+}
+
+/* === Formulario de contacto === */
+.box-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 100%;
+}
+
+.box-form .input-form {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  box-sizing: border-box;
+}
+
+.box-form .input-form:focus {
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.box-form textarea.input-form {
+  height: 200px;
+  resize: vertical;
+}
+
+.box-form .btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: var(--primary-color);
+  color: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.box-form .btn:hover {
+  background: var(--secondary-color);
+  color: var(--main-color);
+}
+
+/* === Footer === */
+footer {
+  background: var(--main-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 1rem;
+}
+
+.social-links a {
+  margin: 0 0.5rem;
+  color: var(--secondary-color);
+}
+
+.social-links a i {
+  font-size: 2rem;
+}
+
+/* === Otros === */
+.section-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 1rem;
+}
+
+.title:before {
+  content: attr(data-title);
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.title:after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 5px;
+  background-color: var(--primary-color);
+  border-radius: 3px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* === Botón genérico === */
+.btn {
+  padding: 10px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--secondary-color);
+  color: var(--main-color);
+}
+
+/* === Responsivo === */
+@media (max-width: 1024px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .form-map {
+    grid-template-columns: 1fr;
+  }
+}
+
+
